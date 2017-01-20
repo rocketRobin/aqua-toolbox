@@ -21,6 +21,8 @@ mbox.set("qwerty","info",1);
 mbox.reset(1);
 mbox.reset();
 */
+/// <reference path="../lib/jquery-3.1.1.js" />
+
 var mbox = (function() {
     "use strict";
     var allboxes = $("[mbox]");
@@ -42,7 +44,6 @@ var mbox = (function() {
         //设置指定position的消息盒子
         'set': function(message, level, position) {
             mbox.reset(position);
-            var target = $("[mbox=" + position + "]");
             box.setWithColor(message, box.color[level], position);
         },
 

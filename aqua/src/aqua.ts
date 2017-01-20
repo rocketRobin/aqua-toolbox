@@ -16,7 +16,7 @@ var aqua = (
 
 
         /**
-         * TimeSpan just like the class TimpSpan in C# ,represent a time difference
+         * TimeSpan just like the class TimpSpan in C# ,represent the time difference
          */
         class TimeSpan {
             constructor(millionseconds: number) {
@@ -75,7 +75,7 @@ var aqua = (
 
 
             /**
-             * make add or subtract to a Date object
+             * add or subtract some time to a Date object
              * 在一个日期上加减时间 
              * @param {Date} date 日期对象
              * @param {number} diff 差值（毫秒）
@@ -83,7 +83,7 @@ var aqua = (
              */
             diffDate: function (date: Date, diff: number) {
                 return new Date(
-                    aqua.dateUTC(date) + diff
+                    aqua.UTC(date) + diff
                 );
             },
 
@@ -95,7 +95,7 @@ var aqua = (
              * @param {Date} date
              * @returns {number}
              */
-            dateUTC: function (date: Date): number {
+            UTC: function (date: Date): number {
                 return Date.UTC(
                     date.getUTCFullYear(),
                     date.getUTCMonth(),
@@ -133,8 +133,8 @@ var aqua = (
              * @returns {TimeSpan}
              */
             compareDate: function (date1: Date, date2: Date): TimeSpan {
-                let number1 = aqua.dateUTC(date1);
-                let number2 = aqua.dateUTC(date2);
+                let number1 = aqua.UTC(date1);
+                let number2 = aqua.UTC(date2);
                 let isPositive = number2 > number1;
                 number1 = Math.abs(number1);
                 number2 - Math.abs(number2);

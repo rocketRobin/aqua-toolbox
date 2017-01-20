@@ -11,7 +11,7 @@
 var aqua = (function () {
     "use strict";
     /**
-     * TimeSpan just like the class TimpSpan in C# ,represent a time difference
+     * TimeSpan just like the class TimpSpan in C# ,represent the time difference
      */
     var TimeSpan = (function () {
         function TimeSpan(millionseconds) {
@@ -52,7 +52,7 @@ var aqua = (function () {
          * @returns {Data} 作差之后的日期对象
          */
         diffDate: function (date, diff) {
-            return new Date(aqua.dateUTC(date) + diff);
+            return new Date(aqua.UTC(date) + diff);
         },
         /**
          * 将Date对象转换为 UTC 时间 毫秒数
@@ -60,7 +60,7 @@ var aqua = (function () {
          * @param {Date} date
          * @returns {number}
          */
-        dateUTC: function (date) {
+        UTC: function (date) {
             return Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
         },
         /**
@@ -88,8 +88,8 @@ var aqua = (function () {
          * @returns {TimeSpan}
          */
         compareDate: function (date1, date2) {
-            var number1 = aqua.dateUTC(date1);
-            var number2 = aqua.dateUTC(date2);
+            var number1 = aqua.UTC(date1);
+            var number2 = aqua.UTC(date2);
             var isPositive = number2 > number1;
             number1 = Math.abs(number1);
             number2 - Math.abs(number2);
