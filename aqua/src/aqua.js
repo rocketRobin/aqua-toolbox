@@ -6,32 +6,32 @@
  * Lisence   :Apache 2.0 http://www.apache.org/licenses/
  */
 /**
+ * TimeSpan just like the class TimpSpan in C# ,represent the time difference
+ */
+var TimeSpan = (function () {
+    function TimeSpan(millionseconds) {
+        this.totalMillionseconds = millionseconds;
+        this.totalSeconds = millionseconds / 1000;
+        this.totalMinutes = this.totalSeconds / 60;
+        this.totalHours = this.totalMinutes / 60;
+        this.totalDays = this.totalHours / 24;
+        this.day = Math.floor(millionseconds / (1000 * 60 * 60 * 24));
+        var surplus = millionseconds % (1000 * 60 * 60 * 24);
+        this.hour = surplus / (1000 * 60 * 60);
+        surplus = surplus % (1000 * 60 * 60);
+        this.minute = surplus / (1000 * 60);
+        surplus = surplus % (1000 * 60);
+        this.second = surplus / (1000);
+        surplus = surplus % (1000);
+        this.millionsecond = surplus;
+    }
+    return TimeSpan;
+}());
+/**
  * aqua 对象
  */
 var aqua = (function () {
     "use strict";
-    /**
-     * TimeSpan just like the class TimpSpan in C# ,represent the time difference
-     */
-    var TimeSpan = (function () {
-        function TimeSpan(millionseconds) {
-            this.totalMillionseconds = millionseconds;
-            this.totalSeconds = millionseconds / 1000;
-            this.totalMinutes = this.totalSeconds / 60;
-            this.totalHours = this.totalMinutes / 60;
-            this.totalDays = this.totalHours / 24;
-            this.day = Math.floor(millionseconds / (1000 * 60 * 60 * 24));
-            var surplus = millionseconds % (100 * 60 * 60 * 24);
-            this.hour = surplus / (1000 * 60 * 60);
-            surplus = surplus % (1000 * 60 * 60);
-            this.minute = surplus / (1000 * 60);
-            surplus = surplus % (1000 * 60);
-            this.second = surplus / (1000);
-            surplus = surplus % (1000);
-            this.millionsecond = surplus;
-        }
-        return TimeSpan;
-    }());
     var aqua = {
         /**
          * judge an object is a JSON object or not
@@ -45,7 +45,7 @@ var aqua = (function () {
                 !obj.length;
         },
         /**
-         * make add or subtract to a Date object
+         * add or subtract some time to a Date object
          * 在一个日期上加减时间
          * @param {Date} date 日期对象
          * @param {number} diff 差值（毫秒）

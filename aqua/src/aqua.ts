@@ -8,6 +8,51 @@
 
 
 /**
+ * TimeSpan just like the class TimpSpan in C# ,represent the time difference
+ */
+class TimeSpan {
+    constructor(millionseconds: number) {
+        this.totalMillionseconds = millionseconds;
+        this.totalSeconds = millionseconds / 1000;
+        this.totalMinutes = this.totalSeconds / 60;
+        this.totalHours = this.totalMinutes / 60;
+        this.totalDays = this.totalHours / 24;
+
+        this.day = Math.floor(millionseconds / (1000 * 60 * 60 * 24));
+        let surplus = millionseconds % (1000 * 60 * 60 * 24);
+        this.hour = surplus / (1000 * 60 * 60);
+        surplus = surplus % (1000 * 60 * 60);
+        this.minute = surplus / (1000 * 60);
+        surplus = surplus % (1000 * 60);
+        this.second = surplus / (1000);
+        surplus = surplus % (1000);
+        this.millionsecond = surplus;
+
+    }
+
+    totalDays: number;
+    totalHours: number;
+    totalMinutes: number;
+    totalSeconds: number;
+    totalMillionseconds: number;
+
+
+    day: number;
+    hour: number;
+    minute: number;
+    second: number;
+    millionsecond: number;
+
+    /**
+     * if the date2 later than date 1 ,it's true
+     * @type {boolean}
+     * @memberOf TimeSpan
+     */
+    isPositive: boolean;
+}
+
+
+/**
  * aqua 对象
  */
 var aqua = (
@@ -15,49 +60,6 @@ var aqua = (
         "use strict";
 
 
-        /**
-         * TimeSpan just like the class TimpSpan in C# ,represent the time difference
-         */
-        class TimeSpan {
-            constructor(millionseconds: number) {
-                this.totalMillionseconds = millionseconds;
-                this.totalSeconds = millionseconds / 1000;
-                this.totalMinutes = this.totalSeconds / 60;
-                this.totalHours = this.totalMinutes / 60;
-                this.totalDays = this.totalHours / 24;
-
-                this.day = Math.floor(millionseconds / (1000 * 60 * 60 * 24));
-                let surplus = millionseconds % (1000 * 60 * 60 * 24);
-                this.hour = surplus / (1000 * 60 * 60);
-                surplus = surplus % (1000 * 60 * 60);
-                this.minute = surplus / (1000 * 60);
-                surplus = surplus % (1000 * 60);
-                this.second = surplus / (1000);
-                surplus = surplus % (1000);
-                this.millionsecond = surplus;
-
-            }
-
-            totalDays: number;
-            totalHours: number;
-            totalMinutes: number;
-            totalSeconds: number;
-            totalMillionseconds: number;
-
-
-            day: number;
-            hour: number;
-            minute: number;
-            second: number;
-            millionsecond: number;
-
-            /**
-             * if the date2 later than date 1 ,it's true
-             * @type {boolean}
-             * @memberOf TimeSpan
-             */
-            isPositive: boolean;
-        }
 
         let aqua = {
 
@@ -86,8 +88,6 @@ var aqua = (
                     aqua.UTC(date) + diff
                 );
             },
-
-
 
             /**
              * 将Date对象转换为 UTC 时间 毫秒数
