@@ -27,7 +27,7 @@ var aqua = (
                 this.totalDays = this.totalHours / 24;
 
                 this.day = Math.floor(millionseconds / (1000 * 60 * 60 * 24));
-                let surplus = millionseconds % (100 * 60 * 60 * 24);
+                let surplus = millionseconds % (1000 * 60 * 60 * 24);
                 this.hour = surplus / (1000 * 60 * 60);
                 surplus = surplus % (1000 * 60 * 60);
                 this.minute = surplus / (1000 * 60);
