@@ -1,14 +1,15 @@
 ﻿/*!
  * welcome to use aqua toolbox！
- * Author　　：roketRobin
- * Summary　 ：bussines irrelevant、dom irrelevant、js useful function set
- * version　 ：V0.1.0
- * Lisence   :Apache 2.0 http://www.apache.org/licenses/
+ * @author　　：roketRobin
+ * @summary　 ：bussines irrelevant、dom irrelevant、js useful function set
+ * @version　 ：V0.1.0
+ * @lisence   :Apache 2.0 http://www.apache.org/licenses/
  */
 
 
 /**
  * TimeSpan just like the class TimpSpan in C# ,represent the time difference
+ * @class TimeSpan
  */
 class TimeSpan {
     constructor(millionseconds: number) {

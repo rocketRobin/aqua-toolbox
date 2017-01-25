@@ -4,6 +4,7 @@
         "noImplicitAny": false,
         "module": "amd",
         "removeComments": false,
-        "sourceMap": false
+        "sourceMap": false,
+        "declaration": true
     }
 }
