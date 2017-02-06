@@ -1,9 +1,10 @@
 ﻿/*!
  * welcome to use aqua toolbox！
- * @author　　：roketRobin
- * @summary　 ：bussines irrelevant、dom irrelevant、js useful function set
- * @version　 ：V0.1.0
+ * @author    ：roketRobin
+ * @summary   ：bussines irrelevant、dom irrelevant、javascript useful function set
+ * @version   ：V0.1.0
  * @lisence   :Apache 2.0 http://www.apache.org/licenses/
+ * @github    :https://github.com/rocketRobin/aqua-toolbox
  */
 
 
@@ -51,6 +52,11 @@ class TimeSpan {
      */
     isPositive: boolean;
 }
+
+/**
+ * The Aqua class
+ * @class Aqua
+ */
 class Aqua {
 
     /**
