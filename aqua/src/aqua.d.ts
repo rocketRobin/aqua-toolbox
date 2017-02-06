@@ -82,7 +82,4 @@ declare class Aqua {
      */
     fillZero(src: number, direction: string, digit: number): string;
 }
-/**
- * aqua 对象
- */
 declare var aqua: Aqua;

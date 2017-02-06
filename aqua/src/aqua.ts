@@ -7,7 +7,6 @@
  * @github    :https://github.com/rocketRobin/aqua-toolbox
  */
 
-
 /**
  * TimeSpan just like the class TimpSpan in C# ,represent the time difference
  * @class TimeSpan
@@ -159,11 +158,4 @@ class Aqua {
     }
 }
 
-/**
- * aqua 对象
- */
-var aqua = (
-    function () {
-        return new Aqua();
-    }
-)();
+var aqua = new Aqua();

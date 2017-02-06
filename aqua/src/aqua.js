@@ -118,9 +118,4 @@ var Aqua = (function () {
     };
     return Aqua;
 }());
-/**
- * aqua 对象
- */
-var aqua = (function () {
-    return new Aqua();
-})();
+var aqua = new Aqua();
