@@ -132,7 +132,7 @@ class Aqua {
         let number2 = this.UTC(date2);
         let isPositive = number2 > number1;
         number1 = Math.abs(number1);
-        number2 - Math.abs(number2);
+        number2 = Math.abs(number2);
         let res = new TimeSpan(Math.abs(number2 - number1));
         res.isPositive = isPositive;
         return res;

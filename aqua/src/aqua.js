@@ -95,7 +95,7 @@ var Aqua = (function () {
         var number2 = this.UTC(date2);
         var isPositive = number2 > number1;
         number1 = Math.abs(number1);
-        number2 - Math.abs(number2);
+        number2 = Math.abs(number2);
         var res = new TimeSpan(Math.abs(number2 - number1));
         res.isPositive = isPositive;
         return res;
